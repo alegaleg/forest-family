@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,6 +7,7 @@
   <title>FOREST FAMILY</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Eater&display=swap');
+
     body {
       margin: 0;
       padding: 0;
@@ -14,12 +16,15 @@
       color: white;
       font-family: 'Monoton', cursive;
       text-align: center;
-      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
       padding: 80px 20px;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
+      flex: 1;
     }
 
     h1 {
@@ -36,54 +41,101 @@
       text-shadow: 2px 2px 5px #000;
     }
 
-    .contact {
-      font-size: 2.5em;
-      margin: 40px 0 20px;
-      color: #00ffff;
-      text-shadow: 2px 2px 4px #ff00ff;
-    }
-
-    .pattern-left, .pattern-right {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 60px;
-      background: repeating-linear-gradient(
-        45deg,
-        #00ffff,
-        #00ffff 10px,
-        #ff00ff 10px,
-        #ff00ff 20px
-      );
-      opacity: 0.3;
-    }
-
-    .pattern-left {
-      left: 0;
-    }
-
-    .pattern-right {
-      right: 0;
-    }
-
     footer {
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.7);
       font-size: 1em;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .qr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 5px;
+      border: 2px solid #00ffff;
+      padding: 5px;
+      background: white;
+      transition: transform 0.3s ease;
+    }
+
+    .qr-code:hover {
+      transform: scale(1.1);
+    }
+
+    .qr-text {
+      font-size: 1em;
+      color: #00ffff;
+      font-family: 'Eater', cursive;
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 10px;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+      .subtitle {
+        font-size: 1.5em;
+      }
+      .qr-code {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 40px 10px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      .subtitle {
+        font-size: 1.2em;
+      }
+      .qr-code {
+        width: 100px;
+        height: 100px;
+      }
+      footer {
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="pattern-left"></div>
-  <div class="pattern-right"></div>
   <header>
     <h1>FOREST FAMILY</h1>
-    <div class="contact">Тел: 8-911-713-87-62</div>
     <div class="subtitle">Шапки, сумки и футболки</div>
   </header>
 
   <footer>
-    &copy; FOREST FAMILY 2025
+    <div class="footer-content">
+      <div class="qr-container">
+        <img src="images/telegram-qr.png" alt="QR код Telegram" class="qr-code">
+        <span class="qr-text">Наш канал</span>
+      </div>
+      <div class="copyright">
+        &copy; FOREST FAMILY 2025
+      </div>
+    </div>
   </footer>
 </body>
 </html>
